@@ -6,6 +6,7 @@ one:
   bad_thought: MyString
   emotion: MyString
   good_thought: MyString
+  user: one
 
 two:
   date: 2025-05-05
@@ -13,3 +14,4 @@ two:
   bad_thought: MyString
   emotion: MyString
   good_thought: MyString
+  user: two

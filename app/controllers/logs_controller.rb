@@ -2,7 +2,7 @@ class LogsController < ApplicationController
   before_action :set_log, only: %i[ show edit update destroy ]
 
   def index
-    @logs = Log.where(user: Current.session.user)
+    @logs = Log.where(user: user)
   end
 
   def show
@@ -14,7 +14,7 @@ class LogsController < ApplicationController
 
   def create
     @log = Log.new(log_params)
-    @log.user = Current.session.user
+    @log.user = user
     if @log.save
       redirect_to @log
     else
@@ -41,7 +41,11 @@ class LogsController < ApplicationController
   private
 
   def set_log
-    @log = Log.find(params[:id])
+    @log = Log.find_by(id: params[:id], user: user)
+    if @log.nil?
+      flash.alert = "can't find log with that id"
+      redirect_to root_url
+    end
   end
 
   def log_params

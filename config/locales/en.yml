@@ -28,4 +28,20 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      log: "Thought Log"
+    attributes:
+      log:
+        trigger: "Trigger/Situation: What event (external or internal) is associated with the unpleasant emotion? Or what unhelpful behavior did you engage in?"
+        bad_thought: "Unhelpful Thought: 1. What thought(s) and/or image(s) went through your mind (before, during or after the event or unhelpful behavior)? 2. How much did you believe the thought(s)?"
+        emotion: "Emotion(s)/Outcomes: 1. What emotion(s) (sad/ anxious/ angry/ etc.) did you feel (before, during or after the event or unhelpful behavior)? 2. How intense (0-100%) was the emotion?"
+        good_thought: "Rational Counterstatement/Adaptive Response: 1. (optional) What cognitive distortion did you make?"
+  logs:
+    form:
+      trigger_placeholder: "Event, remembering something, etc"
+      bad_thought_placeholder: "“I'm bad,” “this will never get better,” etc."
+      emotion_placeholder: "Notice and/or imagine feelings and behaviors that occur as consequences of this unhelpful thought"
+      good_thought_placeholder: "Identify a more rational thought that could follow your trigger that is based in what you know for certain"
+
+

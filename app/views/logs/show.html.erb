@@ -1,0 +1,12 @@
+<h1><%= @log.date %></h1>
+
+<ul>
+    <li><%= @log.trigger %></li>
+    <li><%= @log.bad_thought %></li>
+    <li><%= @log.emotion %></li>
+    <li><%= @log.good_thought %></li>
+</ul>
+
+<%= link_to "Edit", edit_log_path(@log) %>
+<%= button_to "Delete", @log, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<%= link_to "Back", logs_path %>

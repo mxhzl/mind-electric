@@ -1,0 +1,7 @@
+<h1><%= Log.model_name.human.pluralize %></h1>
+
+<ul>
+    <% @logs.each do |log| %>
+        <li><%= link_to log.date, log %></li>
+    <% end %>
+</ul>

@@ -1,0 +1,657 @@
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 900;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-black.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 900;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-blackitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 700;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 700;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-bolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedblack.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 900;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedblackitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedbold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedbolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedextrabold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 800;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedextrabolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedextralight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 200;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedextralightitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedlight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedlightitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedmedium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 500;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedmediumitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendednormal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendednormalitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedsemibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedsemibolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedthin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 100;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extendedthinitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 800;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extrabold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 800;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extrabolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 200;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extralight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 200;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-extralightitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 300;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 300;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-lightitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 500;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 500;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-mediumitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 400;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 400;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-normalitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 600;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-semibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 600;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-semibolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 100;
+    font-style: normal;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-thin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Aile Iaso";
+    font-weight: 100;
+    font-style: italic;
+    
+    src: local("Iosevka Aile Iaso")
+       , url("iosevka-aile-thinitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Curly Iaso";
+    font-weight: 400;
+    font-style: normal;
+    
+    src: local("Iosevka Curly Iaso")
+       , url("iosevka-curly-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 900;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-black.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 900;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-blackitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 700;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 700;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-bolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedblack.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 900;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedblackitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedbold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedbolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedextrabold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 800;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedextrabolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedextralight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 200;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedextralightitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedlight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedlightitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedmedium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 500;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedmediumitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendednormal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendednormalitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedsemibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedsemibolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedthin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 100;
+    font-style: italic;
+    font-stretch: expanded;
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extendedthinitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 800;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extrabold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 800;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extrabolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 200;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extralight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 200;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-extralightitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 300;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 300;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-lightitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 500;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 500;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-mediumitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 400;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 400;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-normalitalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 600;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-semibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 600;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-semibolditalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 100;
+    font-style: normal;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-thin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Iosevka Etoile Iaso";
+    font-weight: 100;
+    font-style: italic;
+    
+    src: local("Iosevka Etoile Iaso")
+       , url("iosevka-etoile-thinitalic.woff2") format("woff2");
+}

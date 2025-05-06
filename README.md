@@ -1,24 +1,7 @@
-# README
+# thought-log
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![transware](https://pride-badges.pony.workers.dev/static/v1?label=transware&labelColor=%23555&stripeWidth=8&stripeColors=5BCEFA%2CF5A9B8%2CFFFFFF%2CF5A9B8%2C5BCEFA)
 
-Things you may want to cover:
+A web app used for [CBT thought logging](https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/self-help-cbt-techniques/thought-record/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Current tasks and project status can be found [here](https://git.mxhzl.com/mxhzl/thought-log/projects/1)

@@ -4,4 +4,6 @@ class Log < ApplicationRecord
   validates :bad_thought, presence: true
   validates :emotion, presence: true
   validates :good_thought, presence: true
+
+  belongs_to :user
 end

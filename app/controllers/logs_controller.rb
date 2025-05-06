@@ -2,7 +2,7 @@ class LogsController < ApplicationController
   before_action :set_log, only: %i[ show edit update destroy ]
 
   def index
-    @logs = Log.all
+    @logs = Log.where(user: Current.session.user)
   end
 
   def show
@@ -14,6 +14,7 @@ class LogsController < ApplicationController
 
   def create
     @log = Log.new(log_params)
+    @log.user = Current.session.user
     if @log.save
       redirect_to @log
     else

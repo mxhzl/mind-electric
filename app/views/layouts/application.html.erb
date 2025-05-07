@@ -22,24 +22,34 @@
   </head>
 
   <body>
-    <div class="container">
       <header>
+        <hgroup>
+          <h1>The Mind Electric</h1>
+          <p>See how the brain plays around</p>
+        </hgroup>
         <nav>
-          <%= link_to "Home", root_path %>
-          <%= link_to "New #{Log.model_name.human}", new_log_path %>
-          <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+          <ul>
+            <% if authenticated? %>
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "New #{Log.model_name.human}", new_log_path %></li>
+              <li><%= link_to "Sign Out", session_path, data: { "turbo-method": :delete } %></li>
+            <% end %>
+          </ul>
         </nav>
       </header>  
       <main>
         <% flash.each do |type, msg| %>
-          <div>
-            <%= msg %>
+          <div id="flash-wrapper">
+            <div class="flash-container">
+              <div class="flash <%= type %>"><%= msg %>
+              </div>
+            </div>
           </div>
         <% end %>
         <%= yield %>
       </main>
-      <footer></footer>
-    </div>
-
+      <footer>
+        <small></small>
+      </footer>
   </body>
 </html>

@@ -1,12 +1,31 @@
 <h1><%= @log.date %></h1>
 
-<ul>
-    <li><%= @log.trigger %></li>
-    <li><%= @log.bad_thought %></li>
-    <li><%= @log.emotion %></li>
-    <li><%= @log.good_thought %></li>
-</ul>
-
 <%= link_to "Edit", edit_log_path(@log) %>
-<%= button_to "Delete", @log, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<%= link_to "Delete", log_path(@log), data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
 <%= link_to "Back", logs_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Field</th>
+      <th scope="col">Response</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Trigger</th>
+      <td><%= @log.trigger %></td>
+    </tr>
+    <tr>
+      <th scope="row">Unhelpful Thought</th>
+      <td><%= @log.bad_thought %></td>
+    </tr>
+    <tr>
+      <th scope="row">Emotion(s)</th>
+      <td><%= @log.emotion %></td>
+    </tr>    
+    <tr>
+      <th scope="row">Rational Counterstatement</th>
+      <td><%= @log.good_thought %></td>
+    </tr>        
+</table>

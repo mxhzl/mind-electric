@@ -2,7 +2,7 @@ class LogsController < ApplicationController
   before_action :set_log, only: %i[ show edit update destroy ]
 
   def index
-    @logs = Log.where(user: user)
+    @logs = Log.where(user: user).order(date: :desc)
   end
 
   def show
@@ -16,7 +16,7 @@ class LogsController < ApplicationController
     @log = Log.new(log_params)
     @log.user = user
     if @log.save
-      redirect_to @log
+      redirect_to @log, notice: "Log Created!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class LogsController < ApplicationController
 
   def update
     if @log.update(log_params)
-      redirect_to @log
+      redirect_to @log, notice: "Log Updated!"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,17 +35,14 @@ class LogsController < ApplicationController
 
   def destroy
     @log.destroy
-    redirect_to logs_path
+    redirect_to logs_path, notice: "Log Deleted"
   end
 
   private
 
   def set_log
     @log = Log.find_by(id: params[:id], user: user)
-    if @log.nil?
-      flash.alert = "can't find log with that id"
-      redirect_to root_url
-    end
+    redirect_to root_url,  warning: "can't find log with that id" if @log.nil?
   end
 
   def log_params

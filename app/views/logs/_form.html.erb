@@ -1,30 +1,18 @@
 <%= form_with model: log do |form| %>
-    <div class="form-input">
-        <%= form.label :date %>
-        <%= form.date_field :date, value: Date.today %>
-    </div>
+    <%= form.label :date %>
+    <%= form.date_field :date, value: Date.today %>
 
-    <div class="form-input">
-        <%= form.label :trigger %>
-        <%= form.textarea :trigger, placeholder: t("logs.form.trigger_placeholder"), required: true %>
-    </div>
+    <%= form.label :trigger %>
+    <%= form.textarea :trigger, placeholder: t("logs.form.trigger_placeholder"), required: true %>
 
-    <div class="form-input">
-        <%= form.label :bad_thought %>
-        <%= form.textarea :bad_thought, placeholder: t("logs.form.bad_thought_placeholder"), required: true %>
-    </div>  
+    <%= form.label :bad_thought %>
+    <%= form.textarea :bad_thought, placeholder: t("logs.form.bad_thought_placeholder"), required: true %>  
 
-    <div class="form-input">
-        <%= form.label :emotion %>
-        <%= form.textarea :emotion, placeholder: t("logs.form.emotion_placeholder"), required: true %>
-    </div> 
+    <%= form.label :emotion %>
+    <%= form.textarea :emotion, placeholder: t("logs.form.emotion_placeholder"), required: true %> 
 
-    <div class="form-input">
-        <%= form.label :good_thought %>
-        <%= form.textarea :good_thought, placeholder: t("logs.form.good_thought_placeholder"), required: true %>
-    </div>      
-        
-    <div class="form-input">
-        <%= form.submit %>
-    </div>
+    <%= form.label :good_thought %>
+    <%= form.textarea :good_thought, placeholder: t("logs.form.good_thought_placeholder"), required: true %>
+    
+    <%= form.submit %>
 <% end %>

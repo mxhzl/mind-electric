@@ -34,9 +34,9 @@ en:
     attributes:
       log:
         trigger: "Trigger/Situation: What event (external or internal) is associated with the unpleasant emotion? Or what unhelpful behavior did you engage in?"
-        bad_thought: "Unhelpful Thought: 1. What thought(s) and/or image(s) went through your mind (before, during or after the event or unhelpful behavior)? 2. How much did you believe the thought(s)?"
-        emotion: "Emotion(s)/Outcomes: 1. What emotion(s) (sad/ anxious/ angry/ etc.) did you feel (before, during or after the event or unhelpful behavior)? 2. How intense (0-100%) was the emotion?"
-        good_thought: "Rational Counterstatement/Adaptive Response: 1. (optional) What cognitive distortion did you make?"
+        bad_thought: "Unhelpful Thought: What thought(s) and/or image(s) went through your mind (before, during or after the event or unhelpful behavior)? How much did you believe the thought(s)?"
+        emotion: "Emotion(s)/Outcomes: What emotion(s) (sad/ anxious/ angry/ etc.) did you feel (before, during or after the event or unhelpful behavior)? How intense (0-100%) was the emotion?"
+        good_thought: "Rational Counterstatement/Adaptive Response: What cognitive distortion did you make?"
   logs:
     form:
       trigger_placeholder: "Event, remembering something, etc"

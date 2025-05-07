@@ -2,8 +2,8 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t thought_log .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name thought_log thought_log
+# docker build -t mind_electric .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name mind_electric mind_electric
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 

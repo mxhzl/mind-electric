@@ -29,8 +29,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: |
-            - registry.digitalocean.com/mxhzl/mind_electric
+          images: registry.digitalocean.com/mxhzl/mind_electric
           tags: |
             type=sha
             type=semver,pattern={{version}}
@@ -39,6 +38,7 @@ jobs:
         id: push
         uses: docker/build-push-action@v6
         with:
+          context: .
           platforms: linux/amd64        
           push: true
           tags: ${{ steps.meta.outputs.tags }}

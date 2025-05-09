@@ -42,7 +42,7 @@ class LogsController < ApplicationController
 
   def set_log
     @log = Log.find_by(id: params[:id], user: user)
-    redirect_to root_url,  warning: "can't find log with that id" if @log.nil?
+    redirect_to root_path,  warning: "can't find log with that id" if @log.nil?
   end
 
   def log_params

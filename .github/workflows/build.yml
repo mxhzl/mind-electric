@@ -11,7 +11,21 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
-      
+
+      - name: Load secrets from 1Password
+        uses: 1password/load-secrets-action@v2
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          DO_USERNAME: op://mxhzl/DO_TOKEN/username
+          DO_TOKEN: op://mxhzl/DO_TOKEN/password
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ env.DO_TOKEN }}
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -22,14 +36,14 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: registry.digitalocean.com
-          username: ${{ secrets.DO_USERNAME }}
-          password: ${{ secrets.DO_TOKEN }}
+          username: ${{ env.DO_USERNAME }}
+          password: ${{ env.DO_TOKEN }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: registry.digitalocean.com/mxhzl/mind_electric
+          images: registry.digitalocean.com/${{ vars.REGISTRY_NAME }}/mind_electric
           tags: |
             type=sha
             type=semver,pattern={{version}}
@@ -39,7 +53,10 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          platforms: linux/amd64        
+          platforms: linux/amd64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Run garbage collection on container registry
+        run: doctl registry garbage-collection start --include-untagged-manifests ${{ vars.REGISTRY_NAME }}

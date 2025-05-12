@@ -1,8 +1,10 @@
 class LogsController < ApplicationController
+  include Authenticated
+
   before_action :set_log, only: %i[ show edit update destroy ]
 
   def index
-    @logs = Log.where(user: user).order(date: :desc)
+    @logs = Log.where(user: current_user).order(date: :desc)
   end
 
   def show
@@ -14,7 +16,7 @@ class LogsController < ApplicationController
 
   def create
     @log = Log.new(log_params)
-    @log.user = user
+    @log.user = current_user
     if @log.save
       redirect_to @log, notice: "Log Created!"
     else
@@ -41,7 +43,7 @@ class LogsController < ApplicationController
   private
 
   def set_log
-    @log = Log.find_by(id: params[:id], user: user)
+    @log = Log.find_by(id: params[:id], user: current_user)
     redirect_to root_path,  warning: "can't find log with that id" if @log.nil?
   end
 

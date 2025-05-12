@@ -1,23 +1,6 @@
 @use "pico" with (
   $theme-color: "violet",
-  $enable-semantic-container: true,
-  $enable-classes: false,
-  $modules: (
-    "themes/default": true,
-    "forms/checkbox-radio-switch": false,
-    "forms/input-color": false,
-    "forms/input-file": false,
-    "forms/input-range": false,
-    "forms/input-search": false,
-    "components/accordion": false,
-    "components/card": false,
-    "components/dropdown": false,
-    "components/group": false,
-    "components/loading": false,
-    "components/modal": false,
-    "components/progress": false,
-    "components/tooltip": false,
-  )
+  $enable-semantic-container: true
 );
 
 @use "catppuccin/mocha" as *;
@@ -84,6 +67,10 @@
 .flash.error:before {
   color: $red;
   content: "";
+}
+
+.button-that-wants-to-be-a-link {
+  // color: red;
 }
 
 // html {

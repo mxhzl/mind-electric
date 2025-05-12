@@ -1,9 +1,5 @@
-<% password_digest = BCrypt::Password.create("password") %>
-
 one:
-  email_address: one@example.com
-  password_digest: <%= password_digest %>
+  auth0_id: auth0|123456
 
 two:
-  email_address: two@example.com
-  password_digest: <%= password_digest %>
+  auth0_id: auth0|7890

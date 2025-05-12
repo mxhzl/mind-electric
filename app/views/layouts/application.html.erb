@@ -23,16 +23,22 @@
 
   <body>
       <header>
-        <hgroup>
-          <h1>The Mind Electric</h1>
-          <p>See how the brain plays around</p>
-        </hgroup>
+
         <nav>
           <ul>
-            <% if authenticated? %>
-              <li><%= link_to "Home", root_path %></li>
+            <li>
+              <hgroup>
+                <h1>The Mind Electric</h1>
+                <p>See how the brain plays around</p>
+              </hgroup>
+            </li>
+          </ul>          
+          <ul>
+            <li><%= link_to "Home", logged_in? ? logs_path : root_path %></li>
+            <li><%= button_to 'Login', '/auth/auth0', method: :post, class: "button-that-wants-to-be-a-link", data: { turbo: false } unless logged_in? %></li>
+            <% if logged_in? %>
               <li><%= link_to "New #{Log.model_name.human}", new_log_path %></li>
-              <li><%= link_to "Sign Out", session_path, data: { "turbo-method": :delete } %></li>
+              <li><%= link_to 'Logout', logout_path %></li>
             <% end %>
           </ul>
         </nav>

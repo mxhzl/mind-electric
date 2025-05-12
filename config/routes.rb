@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,9 +14,4 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :logs
-
-  get "/auth/login" => "auth0#login", as: :login
-  get "/auth/auth0/callback" => "auth0#callback", as: :auth0_callback
-  get "/auth/failure" => "auth0#failure"
-  get "/auth/logout" => "auth0#logout", as: :logout
 end

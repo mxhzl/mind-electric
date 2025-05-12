@@ -1,6 +1,5 @@
 class LogsController < ApplicationController
-  include Authenticated
-
+  before_action :authenticate_user!
   before_action :set_log, only: %i[ show edit update destroy ]
 
   def index

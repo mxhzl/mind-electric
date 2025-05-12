@@ -66,5 +66,4 @@ end
 
 gem "dartsass-rails", "~> 0.5.1"
 
-gem "omniauth-auth0", "~> 3.0"
-gem "omniauth-rails_csrf_protection", "~> 1.0" # prevents forged authentication requests
+gem "devise", "~> 4.9"

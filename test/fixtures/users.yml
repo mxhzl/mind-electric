@@ -1,5 +1,5 @@
 one:
-  auth0_id: auth0|123456
+  email: "test@example.com"
 
 two:
-  auth0_id: auth0|7890
+  email: "test2@example.com"

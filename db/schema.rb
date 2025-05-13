@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_12_030955) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_13_004532) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "logs", force: :cascade do |t|
-    t.date "date"
-    t.string "trigger"
-    t.string "bad_thought"
-    t.string "emotion"
-    t.string "good_thought"
+    t.date "date", null: false
+    t.string "trigger", null: false
+    t.string "bad_thought", null: false
+    t.string "emotion", null: false
+    t.string "good_thought", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

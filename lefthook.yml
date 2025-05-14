@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - run: bin/database_consistency
+    - run: bin/brakeman --no-pager
+    - run: bin/importmap audit
+    - run: bin/rubocop -a

@@ -101,6 +101,8 @@ GEM
     dartsass-rails (0.5.1)
       railties (>= 6.0.0)
       sass-embedded (~> 1.63)
+    database_consistency (2.0.4)
+      activerecord (>= 3.2)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -386,6 +388,7 @@ DEPENDENCIES
   brakeman
   capybara
   dartsass-rails (~> 0.5.1)
+  database_consistency
   debug
   devise (~> 4.9)
   importmap-rails

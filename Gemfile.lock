@@ -102,7 +102,7 @@ GEM
     dartsass-rails (0.5.1)
       railties (>= 6.0.0)
       sass-embedded (~> 1.63)
-    database_consistency (2.0.4)
+    database_consistency (2.0.5)
       activerecord (>= 3.2)
     date (3.4.1)
     debug (1.11.0)

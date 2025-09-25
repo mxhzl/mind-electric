@@ -114,6 +114,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dockerfile-rails (1.7.10)
+      rails (>= 3.0.0)
     drb (2.2.3)
     erb (5.0.2)
     erubi (1.13.1)
@@ -412,6 +414,7 @@ DEPENDENCIES
   database_consistency
   debug
   devise (~> 4.9)
+  dockerfile-rails (>= 1.7)
   importmap-rails
   jbuilder
   lefthook

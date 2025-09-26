@@ -10,20 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_13_004532) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_26_181952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "fields", force: :cascade do |t|
+    t.string "prompt", null: false
+    t.string "help_text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fields_forms", id: false, force: :cascade do |t|
+    t.bigint "field_id", null: false
+    t.bigint "form_id", null: false
+    t.index ["field_id"], name: "index_fields_forms_on_field_id"
+    t.index ["form_id"], name: "index_fields_forms_on_form_id"
+  end
+
+  create_table "forms", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "active", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "active"], name: "index_forms_on_name_and_active", unique: true
+  end
+
   create_table "logs", force: :cascade do |t|
     t.date "date", null: false
-    t.string "trigger", null: false
-    t.string "bad_thought", null: false
-    t.string "emotion", null: false
-    t.string "good_thought", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.bigint "form_id", null: false
+    t.index ["form_id"], name: "index_logs_on_form_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.string "text", null: false
+    t.bigint "field_id", null: false
+    t.bigint "log_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["field_id"], name: "index_responses_on_field_id"
+    t.index ["log_id"], name: "index_responses_on_log_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,5 +77,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_13_004532) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "logs", "forms"
   add_foreign_key "logs", "users"
+  add_foreign_key "responses", "fields"
+  add_foreign_key "responses", "logs"
 end

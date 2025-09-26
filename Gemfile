@@ -54,6 +54,7 @@ group :development do
   gem "overmind", require: false
   gem "database_consistency", require: false
   gem "lefthook", require: false
+  gem "annotaterb", require: false
 end
 
 group :test do

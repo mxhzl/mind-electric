@@ -42,10 +42,11 @@ class FormsController < ApplicationController
 
   def set_form
     @form = Form.find_by(id: params[:id])
-    redirect_to root_path,  warning: "can't find log with that id" if @form.nil?
+    @fields = @form.fields.order(:created_at)
+    redirect_to root_path,  warning: "can't find form with that id" if @form.nil?
   end
 
   def form_params
-    params.expect(form: [ :name, :active ])
+    params.expect(form: [ :name, :active, field_ids: [] ])
   end
 end

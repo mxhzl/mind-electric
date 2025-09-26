@@ -1,0 +1,9 @@
+<h1><%= Field.model_name.human.pluralize %></h1>
+
+<%= link_to "New #{Field.model_name.human}", new_field_path %>
+
+<ul>
+    <% @fields.each do |field| %>
+        <li><%= link_to field.short_prompt, field %></li>
+    <% end %>
+</ul>

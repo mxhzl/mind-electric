@@ -44,7 +44,8 @@
                   Admin
                 </summary>
                 <ul dir="rtl">
-                  <li><%= link_to "Forms", forms_path %></li>
+                  <li><%= link_to Form.model_name.human.pluralize, forms_path %></li>
+                  <li><%= link_to Field.model_name.human.pluralize, fields_path %></li>
                 </ul>
               </details>
               </li>

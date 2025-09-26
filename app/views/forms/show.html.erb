@@ -6,8 +6,9 @@
 
 <p><%= @form.active ? "Active" : "Inactive" %></p>
 
+<h3>Fields</h3>
 <ul>
-    <% @form.fields do |field| %>
+    <% @fields.each do |field| %>
         <li><%= link_to field.prompt, field %></li>
     <% end %>
 </ul>

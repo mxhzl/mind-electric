@@ -18,6 +18,9 @@
 #
 #  fk_rails_...  (form_id => forms.id)
 #  fk_rails_...  (user_id => users.id)
+#
+#  fk_rails_...  (form_id => forms.id)
+#  fk_rails_...  (user_id => users.id)
 
 
 class Log < ApplicationRecord

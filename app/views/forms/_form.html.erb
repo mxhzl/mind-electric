@@ -5,7 +5,8 @@
     <%= form.label :active %>
     <%= form.check_box :active %>
 
-    <%= form.collection_checkboxes :field_ids, Field.order(:prompt), :id, :prompt %>
+    <h3>Fields</h3>
+    <%= form.collection_checkboxes :field_ids, Field.order(:created_at), :id, :short_prompt, multiple: true %>
     
     <%= form.submit %>
 <% end %>

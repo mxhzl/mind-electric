@@ -1,0 +1,26 @@
+<h1><%= @field.id %></h1>
+
+<%= link_to "Back", fields_path %>
+<%= link_to "Edit", edit_field_path(@field) %>
+<%= link_to "Delete", field_path(@field), data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Prompt</th>
+      <th scope="col">Help text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @field.prompt %></th>
+      <td><%= @field.help_text %></td>
+    </tr>     
+</table>
+
+<h3>Forms</h3>
+<ul>
+    <% @field.forms.each do |form| %>
+        <li><%= link_to form.name, form %></li>
+    <% end %>
+</ul>

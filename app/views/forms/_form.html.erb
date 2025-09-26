@@ -1,0 +1,11 @@
+<%= form_with model: form do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.label :active %>
+    <%= form.check_box :active %>
+
+    <%= form.collection_checkboxes :field_ids, Field.order(:prompt), :id, :prompt %>
+    
+    <%= form.submit %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1><%= Form.model_name.human.pluralize %></h1>
+
+<%= link_to "New #{Form.model_name.human}", new_form_path %>
+
+<ul>
+    <% @forms.each do |form| %>
+        <li><%= link_to form.name, form %></li>
+    <% end %>
+</ul>

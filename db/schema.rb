@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_26_210440) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_26_222717) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -20,6 +20,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_26_210440) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "key", null: false
+    t.datetime "discarded_at"
+    t.index ["discarded_at"], name: "index_fields_on_discarded_at"
     t.index ["key"], name: "index_fields_on_key", unique: true
   end
 
@@ -35,6 +37,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_26_210440) do
     t.boolean "active", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "discarded_at"
+    t.index ["discarded_at"], name: "index_forms_on_discarded_at"
     t.index ["name", "active"], name: "index_forms_on_name_and_active", unique: true
   end
 

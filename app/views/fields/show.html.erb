@@ -20,7 +20,7 @@
 
 <h3>Forms</h3>
 <ul>
-    <% @field.forms.each do |form| %>
+    <% @field.forms.kept.each do |form| %>
         <li><%= link_to form.name, form %></li>
     <% end %>
 </ul>

@@ -6,7 +6,7 @@
     <%= form.text_field :help_text %>
 
     <h3>Forms</h3>
-    <%= form.collection_checkboxes :form_ids, Form.order(:name), :id, :name, multiple: true %>
+    <%= form.collection_checkboxes :form_ids, Form.kept.order(:name), :id, :name, multiple: true %>
     
     <%= form.submit %>
 <% end %>

@@ -3,7 +3,7 @@ class FieldsController < ApplicationController
   before_action :set_field, only: %i[ show edit update destroy ]
 
   def index
-    @fields = Field.all.order(:created_at)
+    @fields = Field.kept.order(:created_at)
   end
 
   def show
@@ -35,15 +35,15 @@ class FieldsController < ApplicationController
   end
 
   def destroy
-    @field.destroy
+    @field.discard
     redirect_to fields_path, notice: "Field Deleted!"
   end
 
   private
 
   def set_field
-    @field = Field.find_by(id: params[:id])
-    redirect_to root_path,  warning: "can't find field with that id" if @field.nil?
+    @field = Field.kept.find_by(id: params[:id])
+    redirect_to fields_path,  warning: "can't find field with that id" if @field.nil?
   end
 
   def field_params

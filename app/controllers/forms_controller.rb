@@ -3,7 +3,7 @@ class FormsController < ApplicationController
   before_action :set_form, only: %i[ show edit update destroy ]
 
   def index
-    @forms = Form.all
+    @forms = Form.kept
   end
 
   def show
@@ -34,15 +34,15 @@ class FormsController < ApplicationController
   end
 
   def destroy
-    @form.destroy
+    @form.discard
     redirect_to forms_path, notice: "Form Deleted!"
   end
 
   private
 
   def set_form
-    @form = Form.find_by(id: params[:id])
-    @fields = @form.fields.order(:created_at)
+    @form = Form.kept.find_by(id: params[:id])
+    @fields = @form.fields.kept.order(:created_at)
     redirect_to root_path,  warning: "can't find form with that id" if @form.nil?
   end
 

@@ -2,19 +2,23 @@
 #
 # Table name: fields
 #
-#  id         :bigint           not null, primary key
-#  help_text  :string
-#  key        :string           not null
-#  prompt     :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :bigint           not null, primary key
+#  discarded_at :datetime
+#  help_text    :string
+#  key          :string           not null
+#  prompt       :string           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 # Indexes
 #
-#  index_fields_on_key  (key) UNIQUE
+#  index_fields_on_discarded_at  (discarded_at)
+#  index_fields_on_key           (key) UNIQUE
 #
 
 class Field < ApplicationRecord
+  include Discard::Model
+
   validates :prompt, presence: true
   validates :key, presence: true, uniqueness: true
 

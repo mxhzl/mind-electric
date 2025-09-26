@@ -1,18 +1,11 @@
-<%= form_with model: log do |form| %>
-    <%= form.label :date %>
-    <%= form.date_field :date, value: Date.today %>
+<%= form_with model: [form, log] do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date, value: Date.today %>
 
-    <%= form.label :trigger %>
-    <%= form.textarea :trigger, placeholder: t("logs.form.trigger_placeholder"), required: true %>
-
-    <%= form.label :bad_thought %>
-    <%= form.textarea :bad_thought, placeholder: t("logs.form.bad_thought_placeholder"), required: true %>  
-
-    <%= form.label :emotion %>
-    <%= form.textarea :emotion, placeholder: t("logs.form.emotion_placeholder"), required: true %> 
-
-    <%= form.label :good_thought %>
-    <%= form.textarea :good_thought, placeholder: t("logs.form.good_thought_placeholder"), required: true %>
+    <% form.fields.order(:created_at).each do |field| %>
+        <%= label :field, field.key, field.prompt %>
+        <%= textarea :field, field.key, placeholder: field.help_text, required: true, value: field.responses.find_by(log_id: @log.id)&.text %>
+    <% end %>
     
-    <%= form.submit %>
+    <%= f.submit %>
 <% end %>

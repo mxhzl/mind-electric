@@ -1,7 +1,7 @@
 <h1><%= @log.date %></h1>
 
 <%= link_to "Back", logs_path %>
-<%= link_to "Edit", edit_log_path(@log) %>
+<%= link_to "Edit", edit_form_log_path(@log.form, @log) %>
 <%= link_to "Delete", log_path(@log), data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
 
 <table>
@@ -12,20 +12,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">Trigger</th>
-      <td><%= @log.trigger %></td>
-    </tr>
-    <tr>
-      <th scope="row">Unhelpful Thought</th>
-      <td><%= @log.bad_thought %></td>
-    </tr>
-    <tr>
-      <th scope="row">Emotion(s)</th>
-      <td><%= @log.emotion %></td>
-    </tr>    
-    <tr>
-      <th scope="row">Rational Counterstatement</th>
-      <td><%= @log.good_thought %></td>
-    </tr>        
+    <% @log.responses.each do |r| %>
+      <tr>
+        <th scope="row"><%= r.field.short_prompt %></th>
+        <td><%= r.text %></td>
+      </tr>    
+    <% end %>
+  </tbody>
 </table>

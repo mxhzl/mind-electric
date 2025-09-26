@@ -13,5 +13,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  resources :logs, :forms, :fields, :responses
+  resources :forms, :fields, :responses
+
+  resources :forms do
+    resources :logs, only: [ :new, :edit, :create, :update ]
+  end
+
+  resources :logs, expect: [ :new, :edit, :create, :update ]
 end

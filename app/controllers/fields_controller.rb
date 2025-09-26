@@ -15,6 +15,7 @@ class FieldsController < ApplicationController
 
   def create
     @field = Field.new(field_params)
+    @field.key = @field.prompt.partition(" ").first.downcase.gsub(/[^0-9A-Za-z]/, "").to_sym
     if @field.save
       redirect_to @field, notice: "Field Created!"
     else

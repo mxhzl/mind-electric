@@ -28,5 +28,5 @@ class Log < ApplicationRecord
 
   belongs_to :user
   belongs_to :form
-  has_many :responses
+  has_many :responses, dependent: :destroy
 end

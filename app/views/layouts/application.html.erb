@@ -36,8 +36,19 @@
           <ul>
             <li><%= link_to "Home", user_signed_in? ? logs_path : root_path %></li>
             <% if user_signed_in? %>
-              <li><%= link_to "New #{Log.model_name.human}", new_log_path %></li>
-              <li><%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete } %></li>
+              <li>
+                <details class="dropdown">
+                <summary>
+                  New
+                </summary>
+                <ul dir="rtl">
+                  <% Form.active.each do |f| %>
+                    <li><%= link_to f.name, new_form_log_path(f) %></li>
+                  <% end %>
+                </ul>
+              </details>
+              </li>              
+
               <li>
                 <details class="dropdown">
                 <summary>
@@ -49,6 +60,7 @@
                 </ul>
               </details>
               </li>
+              <li><%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete } %></li>
             <% else %>
               <li><%= link_to "Log in", new_user_session_path %></li>
             <% end %>
